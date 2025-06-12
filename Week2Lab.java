@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+// Week 2 Lab, 4 part lab.
+
 public class StringLab {
     public static void main(String[] args) {
         // Task 1: Working with String Methods
