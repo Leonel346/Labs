@@ -1,0 +1,58 @@
+public class SuperheroRoster {
+
+public static void main(String[] args){
+
+  //1. create arrays for hero names, abilities, and powers levels
+  String[] heroNames = {"Spider-Man", "Iron Man", "Black Widow"};
+  String[] abilities = {"Web-slinging", "Flying and high armor", "Stealth and combat"};
+  int[] powerLevels = {85, 90, 80};
+
+  //Now to create an array of superhero objects
+  Superhero[] heroes = new Superhero{heroNames.length};
+  for (int i = 0; i < heroes.length; i++) {
+    heroes[i] = new Superhero(heroNames[i], abilities[i], powerLevels[i]);
+  }
+
+  //2. Hero's details using the loop
+  System.out.println("=== Superhero Roster ===");
+  for (Superhero hero : heroes) {
+    hero.displayHero();
+    System.out.println();
+  }
+
+  //3. Call searchHero method to find specific hero by name
+  System.out.println("=== Search for Hero ===");
+  searchHero(heroNames, abilities, powerLevels, "Iron Man"); //name can change to search
+
+  //4. Calculate and show the Average power level
+  double average = calculateAveragePower(powerLevels);
+  System.out.println("\nAverage Power Level: " + average);
+  }
+
+//Method for: searchHero
+public static void searchHero(String[] names, String[] abilities, int[] powerLevels, String target) {
+  boolean found = false;
+  for (int i = 0; i < names.length; i++) {
+    if (names[i].equalsIgnoreCase(target)) {
+      System.out.println("Hero Found:");
+      System.out.println("Name: " + names[i]);
+      System.out.println("Ability: " + abilities[i]);
+      System.out.println("Power Level: " + powerLevels[i]);
+      found = true;
+      break;
+    }
+  }
+  if (!found) {
+    System.out.println("Hero '" + target + "' not found.");
+  }
+}
+
+//method to calcualte the average power
+public static double calculateAveragePower(int[] powerLevels){
+  int sum = 0;
+  for (int level : powerLevels) {
+    sum += level:
+  }
+  return (double) sum / powerLevels.length;
+  }
+}
