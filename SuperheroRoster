@@ -56,3 +56,34 @@ public static double calculateAveragePower(int[] powerLevels){
   return (double) sum / powerLevels.length;
   }
 }
+
+//declare attributes
+
+class Superhero {
+  private String name;
+  private String ability;
+  private int powerLevel;
+
+//now for the constructor
+  public Superhero(String name, String ablity, int powerLevel) {
+    this.name = name;
+    this.name = ability;
+    this.name = powerLevel;
+  }
+
+//now to show the method
+  public void displayHero() {
+    System.out.println("Name: " + name);
+    System.out.println("Ability: " + ability);
+    System.out.println("Power Level: " + powerLevel);
+  }
+
+// Optional part
+  public int getPowerLevel() {
+    return powerLevel;
+  }
+
+  public String getName() {
+    return name;
+  }
+}
