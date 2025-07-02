@@ -25,7 +25,7 @@ public class FinalProject {
       System.out.println("4. Exit");
       int choice = getValidatedInt(scanner);
 
-      Switch (choice) {
+      switch (choice) {
         case 1:
           addTask(scanner);
           break;
@@ -80,7 +80,7 @@ private static void viewTasks() {
 
   System.out.println("\nCompleted Tasks:");
   for (int i = 0; i < completedIndex; i++) {
-    System.out.println(i + ". " + completedTasks.get[i]);
+    System.out.println(i + ". " + completedTasks[i]);
   }
 }
 
@@ -96,7 +96,7 @@ private static int getValidatedInt(Scanner scanner) {
 }
 
 private static void saveData() {
-  try (BufferedWriter bw = newBufferedWriter(new FileWriter(PENDING_FILE))) {
+  try (BufferedWriter bw = new BufferedWriter(new FileWriter(PENDING_FILE))) {
     for (String task : pendingTasks) {
       bw.write(task);
       bw.newLine();
@@ -111,7 +111,7 @@ private static void saveData() {
       bw.newLine();
     }
   } catch (IOException e) {
-    System.our.println("Error saving completed tasks: " + e.getMessage());
+    System.out.println("Error saving completed tasks: " + e.getMessage());
   }
 }
 
@@ -125,7 +125,7 @@ private static void loadData() {
     System.out.println("No pending tasks file found. Starting fresh.");
   }
 
-  try(BufferedReader br = new BufferedReader(newFileReader(COMPLETED_FILE))) {
+  try(BufferedReader br = new BufferedReader(new FileReader(COMPLETED_FILE))) {
     String line;
     while ((line = br.readLine()) != null && completedIndex < completedTasks.length) {
       completedTasks[completedIndex++] = line;
